@@ -1,42 +1,57 @@
 package com.example.addressBook.service;
 
+import com.example.addressBook.dto.ContactDTO;
+import com.example.addressBook.mapper.ContactMapper;
 import com.example.addressBook.model.Contact;
 import com.example.addressBook.repository.ContactRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ContactService {
 
-    @Autowired
-    private ContactRepository contactRepository;
+    private final ContactRepository contactRepository;
+    private final ContactMapper contactMapper;
 
-    public List<Contact> getAllContacts() {
-        return contactRepository.findAll();
+    public ContactService(ContactRepository contactRepository, ContactMapper contactMapper) {
+        this.contactRepository = contactRepository;
+        this.contactMapper = contactMapper;
     }
 
-    public Optional<Contact> getContactById(Long id) {
-        return contactRepository.findById(id);
+    public List<ContactDTO> getAllContacts() {
+        return contactRepository.findAll()
+                .stream()
+                .map(contactMapper::toDTO)
+                .collect(Collectors.toList());
     }
 
-    public Contact addContact(Contact contact) {
-        return contactRepository.save(contact);
+    public Optional<ContactDTO> getContactById(Long id) {
+        return contactRepository.findById(id).map(contactMapper::toDTO);
     }
 
-    public Contact updateContact(Long id, Contact updatedContact) {
+    public ContactDTO addContact(ContactDTO contactDTO) {
+        Contact contact = contactMapper.toEntity(contactDTO);
+        return contactMapper.toDTO(contactRepository.save(contact));
+    }
+
+    public Optional<ContactDTO> updateContact(Long id, ContactDTO contactDTO) {
         return contactRepository.findById(id)
-                .map(contact -> {
-                    contact.setName(updatedContact.getName());
-                    contact.setEmail(updatedContact.getEmail());
-                    contact.setPhone(updatedContact.getPhone());
-                    return contactRepository.save(contact);
-                }).orElse(null);
+                .map(existingContact -> {
+                    existingContact.setName(contactDTO.getName());
+                    existingContact.setEmail(contactDTO.getEmail());
+                    existingContact.setPhone(contactDTO.getPhone()); //Update Phone Number
+                    return contactMapper.toDTO(contactRepository.save(existingContact));
+                });
     }
 
-    public void deleteContact(Long id) {
-        contactRepository.deleteById(id);
+    public boolean deleteContact(Long id) {
+        if (contactRepository.existsById(id)) {
+            contactRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 }
