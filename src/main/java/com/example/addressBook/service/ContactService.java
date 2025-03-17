@@ -1,9 +1,10 @@
 package com.example.addressBook.service;
 
 import com.example.addressBook.dto.ContactDTO;
-import com.example.addressBook.mapper.ContactMapper;
+import com.example.addressBook.exceptions.AddressBookException;
 import com.example.addressBook.model.Contact;
 import com.example.addressBook.repository.ContactRepository;
+import com.example.addressBook.mapper.ContactMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,16 +12,19 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class ContactService {
+public class ContactService implements IContactService {
 
-    private final ContactRepository contactRepository;
-    private final ContactMapper contactMapper;
+    // Remove private final, use constructor injection
+    ContactRepository contactRepository;
+    ContactMapper contactMapper;
 
+    // Constructor for dependency injection
     public ContactService(ContactRepository contactRepository, ContactMapper contactMapper) {
         this.contactRepository = contactRepository;
         this.contactMapper = contactMapper;
     }
 
+    @Override
     public List<ContactDTO> getAllContacts() {
         return contactRepository.findAll()
                 .stream()
@@ -28,30 +32,37 @@ public class ContactService {
                 .collect(Collectors.toList());
     }
 
-    public Optional<ContactDTO> getContactById(Long id) {
-        return contactRepository.findById(id).map(contactMapper::toDTO);
+    @Override
+    public ContactDTO getContactById(Long id) {
+        Optional<Contact> contact = contactRepository.findById(id);
+        return contact.map(contactMapper::toDTO)
+                .orElseThrow(() -> new AddressBookException("Contact with ID: " + id + " not found"));
     }
 
+    @Override
     public ContactDTO addContact(ContactDTO contactDTO) {
         Contact contact = contactMapper.toEntity(contactDTO);
         return contactMapper.toDTO(contactRepository.save(contact));
     }
 
-    public Optional<ContactDTO> updateContact(Long id, ContactDTO contactDTO) {
-        return contactRepository.findById(id)
-                .map(existingContact -> {
-                    existingContact.setName(contactDTO.getName());
-                    existingContact.setEmail(contactDTO.getEmail());
-                    existingContact.setPhone(contactDTO.getPhone()); //Update Phone Number
-                    return contactMapper.toDTO(contactRepository.save(existingContact));
-                });
+    @Override
+    public ContactDTO updateContact(Long id, ContactDTO contactDTO) {
+        Contact contact = contactRepository.findById(id)
+                .orElseThrow(() -> new AddressBookException("Contact with ID: " + id + " not found"));
+        contact.setName(contactDTO.getName());
+        contact.setEmail(contactDTO.getEmail());
+        contact.setPhone(contactDTO.getPhone());
+        contact.setCity(contactDTO.getCity());
+        return contactMapper.toDTO(contactRepository.save(contact));
     }
 
+    @Override
     public boolean deleteContact(Long id) {
         if (contactRepository.existsById(id)) {
             contactRepository.deleteById(id);
             return true;
+        } else {
+            throw new AddressBookException("Contact with ID: " + id + " not found");
         }
-        return false;
     }
 }
