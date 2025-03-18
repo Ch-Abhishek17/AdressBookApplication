@@ -1,11 +1,23 @@
-2025-03-17T11:37:15.621+05:30  WARN 23644 --- [addressBook] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-17T11:50:02.621+05:30  WARN 23644 --- [addressBook] [http-nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.orm.ObjectOptimisticLockingFailureException: Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [com.example.addressBook.model.Contact#2]]
-2025-03-17T12:04:32.233+05:30  WARN 16712 --- [addressBook] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-17T15:04:36.677+05:30  WARN 7820 --- [addressBook] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-17T15:20:04.567+05:30  WARN 7820 --- [addressBook] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m30s55ms281µs700ns).
-2025-03-17T15:49:53.356+05:30  WARN 7820 --- [addressBook] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=26m18s731ms899µs400ns).
-2025-03-17T15:56:25.702+05:30  WARN 7820 --- [addressBook] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m32s291ms764µs400ns).
-2025-03-17T16:00:39.159+05:30  WARN 7820 --- [addressBook] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m13s418ms639µs400ns).
-2025-03-17T16:12:33.223+05:30  WARN 7820 --- [addressBook] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m24s22ms864µs800ns).
-2025-03-17T16:26:52.109+05:30  WARN 25800 --- [addressBook] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-17T16:32:46.657+05:30  WARN 25800 --- [addressBook] [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2025-03-18T10:54:25.799+05:30  WARN 15776 --- [addressBook] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-18T10:54:25.874+05:30  WARN 15776 --- [addressBook] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: db529e01-55af-4b2b-a47a-dc2f70434d6b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-18T10:56:48.090+05:30  WARN 15776 --- [addressBook] [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/auth/signup.]
+2025-03-18T10:56:55.949+05:30  WARN 15776 --- [addressBook] [http-nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/auth/login.]
+2025-03-18T10:57:57.731+05:30  WARN 15776 --- [addressBook] [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: rawPassword cannot be null]
+2025-03-18T10:58:11.691+05:30  WARN 15776 --- [addressBook] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: rawPassword cannot be null]
+2025-03-18T10:59:33.498+05:30  WARN 16284 --- [addressBook] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-18T10:59:33.554+05:30  WARN 16284 --- [addressBook] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: f0054821-0a21-498e-afc5-fbce3dc51d6e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-18T10:59:45.347+05:30  WARN 16284 --- [addressBook] [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: rawPassword cannot be null]
+2025-03-18T11:03:30.498+05:30  WARN 16284 --- [addressBook] [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: rawPassword cannot be null]
+2025-03-18T11:19:28.628+05:30  WARN 16284 --- [addressBook] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui/index.html.]
+2025-03-18T11:19:29.050+05:30  WARN 16284 --- [addressBook] [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui/index.html.]
+2025-03-18T11:19:29.116+05:30  WARN 16284 --- [addressBook] [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
