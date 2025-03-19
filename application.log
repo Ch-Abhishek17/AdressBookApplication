@@ -1,0 +1,44 @@
+2025-03-19T10:56:10.726+05:30  WARN 10772 --- [addressBook] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-19T10:56:10.785+05:30  WARN 10772 --- [addressBook] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: e7803e41-c331-4951-b9fd-9adeeec92dd8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-19T10:58:34.846+05:30  WARN 10772 --- [addressBook] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource login.]
+2025-03-19T10:59:03.735+05:30  WARN 10772 --- [addressBook] [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource login.]
+2025-03-19T10:59:06.631+05:30  WARN 10772 --- [addressBook] [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource login.]
+2025-03-19T11:00:04.521+05:30  WARN 10772 --- [addressBook] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=55s908ms547µs100ns).
+2025-03-19T11:01:44.078+05:30  WARN 10772 --- [addressBook] [http-nio-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource register.]
+2025-03-19T12:17:03.073+05:30  WARN 12588 --- [addressBook] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-19T12:17:03.172+05:30  WARN 12588 --- [addressBook] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 1c728122-1f7a-4974-82d1-482e71bb9024
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-19T12:17:04.431+05:30  WARN 12588 --- [addressBook] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-03-19T12:17:04.470+05:30  WARN 12588 --- [addressBook] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-03-19T12:17:04.593+05:30 ERROR 12588 --- [addressBook] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-03-19T12:18:01.026+05:30  WARN 14716 --- [addressBook] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-19T12:18:01.113+05:30  WARN 14716 --- [addressBook] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 54d8a2bb-113e-4e6a-aa31-fb1869912019
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-19T12:21:13.352+05:30  WARN 14716 --- [addressBook] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource login.]
+2025-03-19T12:21:46.828+05:30  WARN 14716 --- [addressBook] [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource register.]
